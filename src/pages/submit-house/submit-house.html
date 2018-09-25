@@ -1,0 +1,60 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Submit A House</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="back">
+
+    <ion-item >
+      <ion-label>Title: </ion-label>
+        <ion-input type="text" placeholder="Your Property title... " [(ngModel)]="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Type: </ion-label>
+        <ion-input type="text"placeholder="type" [(ngModel)]="type"  ></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label>Location: </ion-label>
+          <ion-input type="text"placeholder="Your Property Location..." [(ngModel)]="location"  ></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>Price: </ion-label>
+            <ion-input type="number" placeholder="Rent price is taken as bond price also" [(ngModel)]="price"></ion-input>
+        </ion-item>
+          <ion-item>
+              <ion-label># of Bedrooms: </ion-label>
+                <ion-input type="number" placeholder="Number of Bedrooms..." [(ngModel)]="numbedroom"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label># of Bathroom: </ion-label>
+                  <ion-input type="number" placeholder="Number of Bathrooms..." [(ngModel)]="numshower"></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label># of Washroom: </ion-label>
+                    <ion-input type="number" placeholder="Number of Toilet..." [(ngModel)]="numwashroom"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label># of CarPark: </ion-label>
+                      <ion-input type="number" placeholder="Number of CarPark..." [(ngModel)]="carpark"></ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label>Description: </ion-label>
+                      <ion-textarea placeholder="Short Descriptions abuot the Features..."  [(ngModel)]="description" ></ion-textarea>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label>Pick Agent:</ion-label>
+                      <ion-select  [(ngModel)]="agent">
+                          <ion-option *ngFor="let agentform of agentform" value="{{agentform.id}}">{{agentform.first_name}} {{agentform.last_name}}</ion-option>
+                      </ion-select>
+                    </ion-item>
+                  <ion-item>
+                    <input type="file" (change)="onfileselected($event)"/>
+                     </ion-item>
+      <button ion-button full color="danger" icon-left (click)="reupload()">
+          <ion-icon name="cloud-upload"></ion-icon>
+        Done
+      </button>
+</ion-content>

@@ -1,0 +1,17 @@
+<ion-content fullscreen="true" class="no-padding-top getstarted">
+    <ion-slides #slider pager="true">
+      <ion-slide *ngFor="let slide of slides"
+                 class="slide-background swiper-no-swiping"
+                 [ngStyle]="{'background-image': 'url(' + +')'}">
+        <div class="text-wrapper">
+          <div class="slide-text">
+            <h2 class="slide-title" [innerHTML]="slide.title"></h2><br>
+            <p [innerHTML]="slide.description"></p>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slides>
+    <div class="floating-buttons pop-in" *ngIf="slideIndex >= slides.length - 1">
+      <button ion-button clear large full (click)="goToHome()">Let's go!</button>
+    </div>
+  </ion-content>

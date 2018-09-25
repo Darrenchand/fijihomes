@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+		<ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">
+		  <ion-slide class="slide-background swiper-no-swiping" *ngFor="let background of backgrounds" [ngStyle]="{'background-image': 'url(' + background +')'}">
+		  </ion-slide>
+		</ion-slides>
+		<div class="login-container">
+		  <img class="logo" src="assets/imgs/home.png" />
+	
+			<ion-item>
+			  <ion-input type="text" [(ngModel)]="login.email" #username="ngModel" name="email"  placeholder="email" autocapitalize="off" required></ion-input>
+			
+			</ion-item>
+
+			<p ion-text [hidden]="check" color="danger" padding-left>
+					Username is required
+			</p>
+
+			<ion-item>
+					<ion-input [(ngModel)]="login.password" name="password" type="password" #password="ngModel" placeholder="password" required></ion-input>
+			</ion-item>
+
+			<p ion-text [hidden]="check2" color="danger" padding-left>
+					Password is required
+			</p>
+
+
+			<ion-col>
+					<button ion-button block (click)="onLogin()">Login</button>
+				</ion-col>
+
+			<p ><strong>Forgot your password?</strong></p>
+		 
+		</div>
+</ion-content>	

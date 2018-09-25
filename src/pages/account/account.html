@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Account</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<div id="profile-bg" [ngStyle]="{'background-image': 'url(' + coverImage +')'}"></div>
+<div id="content">
+  <div id="profile-info" padding>
+    <img id="profile-image" [src]="user?.pic_url">
+  </div>
+</div>
+
+<form>
+    <ion-card >
+    <ion-list inset >
+  <ion-item>
+    <ion-label>FirstName</ion-label>
+    <ion-input name="firstname"type="text" placeholder="Your Firstname"[(ngModel)]="firstname"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>LastName</ion-label>
+    <ion-input name="lastname"type="text"placeholder="Your Surname"[(ngModel)]="lastname"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>DOB</ion-label>
+    <ion-datetime  name ="dob"displayFormat="MMM DD YYYY"placeholder="Choose Your Date Of Birth"[(ngModel)]="dob"></ion-datetime>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Phone</ion-label>
+    <ion-input name="phone"type="text"placeholder="Your Phone Contact"[(ngModel)]="phone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Linked-In</ion-label>
+    <ion-input name="linkedin"type="text"placeholder="Your Linked-In Profile Details"[(ngModel)]="linkedin"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Address</ion-label>
+    <ion-input name="address"type="text"placeholder="Your Residentail Address"[(ngModel)]="address"></ion-input>
+  </ion-item>
+</ion-list>
+</ion-card>
+<ion-card>
+<ion-list>
+  <ion-item>
+    <ion-label>
+      Description
+    </ion-label>
+    <ion-textarea name="description"placeholder="Short Descriptions about Yourself"[(ngModel)]="description"></ion-textarea>
+  </ion-item>
+</ion-list>
+</ion-card>
+</form>
+
+<div>
+<h4 padding>
+Credentials
+</h4>
+<ion-card>
+<ion-list inset>
+
+    <ion-item>
+      <ion-label>Email</ion-label>
+      <ion-input disabled="true" name="email"type="text"placeholder="Your Valid Email Address required"[(ngModel)]="email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input name="password"type="password" placeholder="A strong Password is Recommended"[(ngModel)]="password"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-card>
+</div>
+
+<h4 padding>Bank Details</h4>
+<ion-card>
+<ion-list inset>
+
+    <ion-item>
+      <ion-label>Bank Account Number</ion-label>
+      <ion-input name="acctnumber"type="text"placeholder="Your Bank Account Details"[(ngModel)]="bank"></ion-input>
+    </ion-item>
+  
+  </ion-list>
+</ion-card>
+
+<button color="secondary"ion-button full (click)="Savechanges()" >Save Changes</button>
+
+  <button ion-button full (click)="logout()">Logout</button>
+
+</ion-content>
+

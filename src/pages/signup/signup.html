@@ -1,0 +1,44 @@
+<ion-header>
+		<ion-navbar>
+			<button ion-button menuToggle>
+				<ion-icon name="menu"></ion-icon>
+			</button>
+			<ion-title>Signup</ion-title>
+		</ion-navbar>
+	</ion-header>
+
+<ion-content>
+		<ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">
+		  <ion-slide class="slide-background swiper-no-swiping" *ngFor="let background of backgrounds" [ngStyle]="{'background-image': 'url(' + background +')'}">
+		  </ion-slide>
+		</ion-slides>
+		<div class="login-container">
+				<img class="logo" src="assets/imgs/home.png" />
+			<ion-item>
+					<ion-input [(ngModel)]="signup.email"  type="text"placeholder="email" required></ion-input>
+			
+			</ion-item>
+
+			<p ion-text [hidden]="check" color="danger" padding-left>
+					Username is required with 3 or more characters
+				</p>
+
+			<ion-item>
+					<ion-input [(ngModel)]="signup.password"  type="password" placeholder="password"  required></ion-input>
+			</ion-item>
+
+			<p ion-text [hidden]="check2" color="danger" padding-left>
+					Password is required with 5 or more characters
+				</p>
+
+				<ion-item>
+					<ion-input [(ngModel)]="signup.first_name"   placeholder="first name"  required></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-input [(ngModel)]="signup.last_name"   placeholder="last name"  required></ion-input>
+		</ion-item>
+			<ion-col>
+					<button ion-button (click)="onSignup()" block>Create</button>
+			</ion-col>
+		</div>
+</ion-content>

@@ -1,0 +1,74 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Open House Arrangement</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding class="colored">
+    <ion-card padding>
+      <h1 class="centered">
+        The Following properties have been Noted Interested
+      </h1>
+      <p>Please Press 'Request' to ask the Owner for prior Inspection Date & Time </p>
+      <table>
+          <thead>
+            <tr>
+              <th >Title</th>
+              <th >Price</th>
+              <th >Address</th>
+              <th >Owner Email</th>
+              <th>Owner Ph# </th>
+              <th > Action </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let r of r">
+              <td>{{ r.title }}</td>
+              <td> ${{ r.price }}</td>
+              <td>{{ r.location }}</td>
+              <td>{{r.email}}</td>
+              <td>{{r.phone}}</td>
+              <td>
+                <button ion-button small class="floatem"(click)="Request(r)" >Request</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </ion-card>
+    <p> </p>
+    <ion-card padding>
+        <h1 class="centered">
+            Schedule of Open House Time
+          </h1>
+          <p>The Table Below displays The Schedule For Open House Times</p>
+      <table>
+          <thead>
+              <tr>
+                <th >Title</th>
+                <th >Price</th>
+                <th >Address</th>
+                <th >Owner Email</th>
+                <th>Owner Ph# </th>
+                <th > Insp Date </th>
+                <th > Insp Time From </th>
+                <th > Insp Time To  </th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of s">
+                    <td>{{ s.title }}</td>
+                    <td> ${{ s.price }}</td>
+                    <td>{{ s.location }}</td>
+                    <td>{{s.email}}</td>
+                    <td>{{s.phone}}</td>
+                    <td>{{s.date}}</td>
+                    <td>{{s.time_start}}</td>
+                    <td>{{s.time_end}}</td>
+                  </tr>
+            </tbody>
+      </table>
+    </ion-card>
+  </ion-content>  

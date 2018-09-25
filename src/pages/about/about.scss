@@ -1,0 +1,111 @@
+page-about {
+  .centered{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 20px 20px 20px;
+}
+.colored{
+    background-size: cover;
+    background-position: center;
+    background-image: url("../assets/img/blur.jpg");
+    text-align: center;
+    padding:5px 5px 5px 5px;
+    align-content: center;
+}
+  
+  .logo {
+      width: 20%;
+      height: auto;
+      padding-top: 9vh;
+      margin-bottom: 15vh;
+    }
+    span {
+      color: white;
+    }
+    .no-scroll .scroll-content {
+      overflow: hidden;
+      }
+    .swiper-slide {
+        overflow-y: scroll;
+        display: block;
+    }
+    .slide-background {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-color: transparent;
+      //overflow-y: scroll;
+    }
+    .slide-zoom {
+      background: rgba(32, 32, 32, 0.2) !important;
+      height: 100%;
+     // overflow-y: scroll;
+    }
+    ion-item {
+      color: black !important;
+      padding-left: 10px !important;
+      margin-bottom: 10px;
+      background-color: transparent !important;
+      font-size: 0.9em;
+    }
+     ::-webkit-input-placeholder {
+      color: white !important;
+    }
+    .about-container {
+      color: white;
+      position: absolute;
+      top: 0;
+      padding: 3vw;
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+      z-index: 2;
+    }
+    ion-button {
+      opacity: 0.8;
+    }
+    .card-background-page {
+
+      ion-card {
+          position: relative;
+          text-align: center;
+          margin-top: 10px;
+        }
+
+        .card-title {
+          position: absolute;
+          top: 36%;
+          font-size: 2.0em;
+          width: 100%;
+          font-weight: bold;
+          color: black;
+        }
+      
+        .card-subtitle {
+          font-size: 1.0em;
+          position: absolute;
+          top: 52%;
+          width: 100%;
+          color: black;
+        }
+    }
+      .newmade{
+        background-color:transparent;
+        opacity: 1;
+        
+
+        .img{
+          width: 200px;
+          height: 200px;
+          margin-bottom: 10px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      .HeaderStyle{
+        background-color:white;
+        color: black;
+      }
+    
+}

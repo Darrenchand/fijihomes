@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>About</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding class="colored">
+<!--   
+  <ion-slides pager="false" autoplay="2000" loop="true" speed="1500" effect="fade">
+      <ion-slide class="slide-background swiper-slide" *ngFor="let background of backgrounds" [ngStyle]="{'background-image': 'url(' + background +')'}">
+          <h1>Welcome to About us Page</h1>
+        <ion-grid class="card-background-page" >        
+                  <ion-row>                   
+                    <ion-col col-12 col-md-6 col-lg-4 col-xl-4 *ngFor="let item of AboutItems">
+                      <ion-card class= "newmade"> 
+                        <img class="img"src={{item.image}}/>
+                            <ion-card-header style="background-color:white">{{item.title}}</ion-card-header>
+                            <ion-card-content style="background-color:white">{{item.text}}</ion-card-content>      
+                      </ion-card>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid> 
+      </ion-slide>
+    </ion-slides> -->
+    <ion-card>
+        <h1 class="centered">About Us</h1>
+        <p>Fiji Homes Started Way Back in the 1970. This Website was made just This Year 2018 to accomodate the growing needs of the customers The company's current office is located in Suva, and employs 17 sales consultants and support staff, and 4 administration staff. The Fiji real estate industry is known to behighly corrupt, unethical and unstructured. FijiHomes has done a lot to improve this, and continues to do so, bringing high standards of customer service and ethics to the industry. Our agents are either trained in New Zealand, or trained locally by our New Zealand trainers, such that standards of the brand are maintained. FijiHomes enjoys the largest brokered market share for residential property rentals in Fiji, and strives to deliver world class service, through its excellent people!</p>    
+    </ion-card>
+   <ion-card>
+      <h1 class="centered">Contact Us</h1>
+      <p>You Can Call Us on: +6799668863 OR you can drop an email at s11120422@student.usp.ac.fj. ThankYou</p>
+   </ion-card>
+   
+  </ion-content>
+

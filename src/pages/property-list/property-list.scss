@@ -1,0 +1,53 @@
+page-property-list {
+
+    .img{
+        min-height:300px;
+        min-width: 200px;
+    }
+
+    .h{
+        height: 150px;
+    }
+
+    .btn_view{
+        margin-left: 15%;
+    }
+
+    .iconremake{
+        width: 23px;
+        height:23px;
+        float: left;
+        margin-left: 8px;
+        margin-right: 8px;
+        padding-bottom: 5px;
+        
+      }
+ 
+      .button1{
+          width: 60%;
+      }
+      .button2{
+        width: 33%;
+    }
+      .iconsize{
+        width: 17px;
+        height:17px;
+        float: left;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      .floatelement{
+        float: left;
+        background-color:ghostwhite;
+      }
+      .propertycardstyle{
+    
+       
+       padding-left: 15px;
+      }
+
+      ion-card{
+        height: 320px; 
+      }
+
+}

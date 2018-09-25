@@ -1,0 +1,77 @@
+<!--
+  Generated template for the UserinspecttimePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Open House Inspection Time</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="colored">
+ 
+ <ion-card>
+    <h1 class="centered">
+        Fill in the Inspection Date & Time For Your Property
+      </h1>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let r of r">
+              <ion-card >
+                  <h2 class="headerstyle">Property Info</h2>
+                  <ion-list>
+                      <ion-item>
+                          <ion-label>Property Title</ion-label>
+                          <ion-input disabled="true"name="title"type="text"[(ngModel)]="r.title"></ion-input>
+                          
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Property Address</ion-label>
+                            <ion-input disabled="true" name="address"type="text"[(ngModel)]="r.location"></ion-input>
+                         
+                          </ion-item>
+                          <ion-item>
+                              <ion-label>Property Price</ion-label>
+                              <ion-input disabled="true" name="price"type="text"[(ngModel)]="r.price"></ion-input>
+                             
+                            </ion-item>
+                  </ion-list>
+                  <h2 class="headerstyle">Open House Time Info</h2>
+                  <ion-list>
+                      <ion-item>
+                          <ion-label>Date</ion-label>
+                          <ion-datetime  name ="date"displayFormat="YYYY MMM DD "placeholder="Choose Your Date of Inspection"[(ngModel)]="date"></ion-datetime>
+                       
+                        </ion-item>
+                        <ion-item>
+                            <ion-label>Inspection Time From</ion-label>
+                            <ion-datetime  name ="timefrom"displayFormat="h:mm A" pickerFormat="h mm A"placeholder="Time Starts From"[(ngModel)]="timefrom"></ion-datetime>
+                         
+                          </ion-item>
+                          <ion-item>
+                              <ion-label>Inspection Time To</ion-label>
+                              <ion-datetime  name ="timeto"displayFormat="h:mm A" pickerFormat="h mm A"placeholder="Time End"[(ngModel)]="timeto"></ion-datetime>
+                          
+                            </ion-item>
+                  </ion-list>
+                  <div class="centereditem">
+                      <button ion-button (click)="confirm(r,date, timefrom,timeto)">
+                          Confirm
+                        </button>
+                  </div>
+                  
+                </ion-card> 
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+        <div>
+              
+        </div>
+ </ion-card> 
+ 
+</ion-content>

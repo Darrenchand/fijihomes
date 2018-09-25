@@ -1,0 +1,77 @@
+<!--
+  Generated template for the AllreviewsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>All Reviews</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="colored">
+<ion-card padding>
+    <h1 class="centered"> All Reviews by Tenants are shown in the table below: </h1>
+    <table class="footable">
+        <thead>
+          <tr>
+            <th data-class="expand"> Reviewed By </th>
+            <th data-hide="phone">Reviewed For</th>
+            <th data-hide="phone,tablet">Property Title</th>
+            <th data-hide="phone,tablet">Reviews</th>
+            <th data-hide="phone,tablet">Ratings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let resut of resut">
+            <td> {{resut.reviewby}}</td>
+            <td> {{resut.reviewfor}}</td>
+            <td> {{resut.propertytitle}}</td>
+            <td>{{resut.reviewdescription}}</td>
+            <td><ion-rating
+              class="stylesheet"
+              [numStars]="5"
+              [readOnly]="true"
+              [value]=resut.rank>
+              </ion-rating>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+</ion-card>
+<ion-card>
+    <p>.</p>
+    <h1 class="centered"> All Reviews By Owners are shown in the table below: </h1>
+    <p>.</p>
+    <table class="footable">
+        <thead>
+          <tr>
+            <th data-class="expand"> Reviewed By </th>
+            <th data-hide="phone">Reviewed For</th>
+            <th data-hide="phone,tablet">Property Title</th>
+            <th data-hide="phone,tablet">Reviews</th>
+            <th data-hide="phone,tablet">Ratings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let result of result">
+              <td> {{result.reviewby}}</td>
+              <td> {{result.reviewfor}}</td>
+              <td> {{result.propertytitle}}</td>
+              <td>{{result.reviewdescription}}</td>
+              <td><ion-rating
+                class="stylesheet"
+                [numStars]="5"
+                [readOnly]="true"
+                [value]=result.rank>
+                </ion-rating>
+                </td>
+          </tr>
+        </tbody>
+      </table>
+</ion-card>
+</ion-content>

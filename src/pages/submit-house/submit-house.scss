@@ -1,0 +1,51 @@
+page-submit-house {
+    
+    .back{
+
+        background-image: url("../assets/img/blur.jpg");
+    }
+    .padingimg{
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .iconremake{
+        width: 23px;
+        height:23px;
+        float: left;
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+     
+      .getstarted{
+       
+        background-size:cover;
+      }
+      .headercentered{
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+          color: white;
+          background-color: transparent;
+      }
+      .container {
+        border-radius: 5px;
+        background-color:#0066FF;
+        padding: 20px;
+        color: black;
+    }
+    ion-label{
+        padding: 12px 12px 5px 1px;
+        display: inline-block;
+        width: 25%;
+        color: black;
+        font-weight: bold;
+    }
+    ion-input{
+        width: 75%;
+        border: 1px solid rgb(204, 204, 204);
+        border-radius: 4px;
+        resize: vertical;
+    }
+
+}

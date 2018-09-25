@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+        <button class="button2" ion-button round left >
+            <ion-label>Search by</ion-label>
+            <ion-select [(ngModel)]="selectedchoice">
+                <ion-option value="price">price</ion-option>
+                <ion-option value="Location">Location</ion-option>
+                <ion-option value="Bedrooms">Bedrooms</ion-option>
+                <ion-option value="type">type</ion-option>
+          </ion-select>
+          </button>
+
+          <button class="button1" ion-button color="secondary" outline right >
+            <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"></ion-searchbar>
+            </button>
+
+                      
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-6 col-lg-4 col-xl-3 *ngFor="let resutl of resutl">
+        <ion-card (click)=" housedetail(resutl)"  class="img">
+          <img class="h"src={{resutl.pic_url}}/>
+            <ion-card-header>{{ resutl.title }}</ion-card-header>
+            <div >
+              <p>
+                  <img class= "iconsize"src="assets/img/home1.png"/>
+                  {{ resutl.type }} 
+              </p>
+              <p>
+                  <img class= "iconsize"src="assets/img/location.png"/>
+                  {{ resutl.location }}
+              </p>
+              <p>
+                  <img class= "iconsize"src="assets/img/price.png"/>
+                  ${{ resutl.price }}
+              </p>
+              <img class= "iconremake"src="assets/img/beds.png"/>
+              <p class="floatelement">
+                  {{ resutl.num_bedroom }}
+              </p>
+              <img class= "iconremake"src="assets/img/toilet.png"/>
+              <p class="floatelement">
+                  {{ resutl.num_washroom }}
+              </p>
+              <img class= "iconremake"src="assets/img/apartmentbathroom.png"/>
+              <p class="floatelement">
+                  {{ resutl.num_shower }}
+              </p>
+              <img class= "iconremake"src="assets/img/carpark.png"/>
+              <p class="floatelement">
+                  {{ resutl.carpark }}
+              </p>
+          </div>     
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,137 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Liable Properties</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding class="colored">
+    <ion-card padding>
+       <h1 class="centered">Properties Requesting For Approval</h1>
+        <table class="footable">
+          <thead>
+            <tr>
+              <th >Upload Date </th>
+              <th >Title</th>
+              <th >Image</th>
+              <th >Price</th>
+              <th >Address</th>
+              <th >Owner Email</th>
+              <th >Status</th>
+              <th > Action </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let r of r">
+              <td> {{r.created_at | date:'dd/MM/yyyy'}}</td>
+              <td>{{ r.title }}</td>
+              <td> <img src={{r.property_pic}}/></td>
+              <td> ${{ r.price }}</td>
+              <td>{{ r.location }}</td>
+              <td>{{r.owner_email}}</td>
+              <td>{{ r. propertystatus }}</td>
+              <td>
+                <button ion-button small class="floatem"(click)="Approve(r)" >Approve</button>
+                <button ion-button color="danger" small class="floatem"(click)="Remove(r)">Remove</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </ion-card>
+  <ion-card padding>
+      <h1 class="centered">Advertised Properties</h1>
+      <table class="footable">
+          <thead>
+            <tr>
+              <th data-class="expand"> Upload date</th>
+              <th data-class="expand"> Title</th>
+              <th data-hide="phone">Image</th>
+              <th data-hide="phone,tablet">Price</th>
+              <th data-hide="phone,tablet">Address</th>
+              <th >Owner Email</th>
+              <th data-hide="phone,tablet">Status</th>
+              <th > Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let s of s">
+              <td> {{s.created_at | date:'dd/MM/yyyy'}}</td>
+              <td>{{ s.title }}</td>
+              <td> <img src={{s.property_pic}}/></td>
+              <td> ${{ s.price }}</td>
+              <td>{{ s.location }}</td>
+              <td>{{s.owner_email}}</td>
+              <td>{{ s. propertystatus }}</td>
+              <td>
+                <button ion-button small (click)="Rented(s)" >Rented</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  </ion-card>
+  <ion-card padding>
+      <h1 class="centered">Removed Properties</h1>
+      <table class="footable">
+          <thead>
+            <tr>
+              <th data-class="expand"> Upload date</th>
+              <th data-class="expand"> Title</th>
+              <th data-hide="phone">Image</th>
+              <th data-hide="phone,tablet">Price</th>
+              <th data-hide="phone,tablet">Address</th>
+              <th >Owner Email</th>
+              <th data-hide="phone,tablet">Status</th>
+              <th > Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let t of t">
+              <td> {{t.created_at| date:'dd/MM/yyyy'}}</td>
+              <td>{{ t.title }}</td>
+              <td> <img src={{t.property_pic}}/></td>
+              <td> ${{ t.price }}</td>
+              <td>{{ t.location }}</td>
+              <td>{{t.owner_email}}</td>
+              <td>{{ t. propertystatus }}</td>
+              <td>
+                <button ion-button small (click)="Reactivate(t)"  >Reactivate</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+  </ion-card>
+    <ion-card padding>
+        <h1 class="centered">Rented Properties</h1>
+        <table class="footable">
+            <thead>
+              <tr>
+                <th data-class="expand"> Upload date</th>
+                <th data-class="expand"> Title</th>
+                <th data-hide="phone">Image</th>
+                <th data-hide="phone,tablet">Price</th>
+                <th data-hide="phone,tablet">Address</th>
+                <th >Owner Email</th>
+                <th data-hide="phone,tablet">Status</th>
+                <th > Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let u of u">
+                <td> {{u.created_at | date:'dd/MM/yyyy'}}</td>
+                <td>{{ u.title }}</td>
+                <td> <img src={{u.property_pic}}/></td>
+                <td> ${{ u.price }}</td>
+                <td>{{ u.location }}</td>
+                <td>{{ u.owner_email }}</td>
+                <td>{{ u. propertystatus }}</td>
+                <td>
+                  <button ion-button small (click)="Repost(u)"  >Repost</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </ion-card>
+     
+</ion-content>

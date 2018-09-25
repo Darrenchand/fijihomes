@@ -1,0 +1,85 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-title>
+      {{estateProperty.title}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen elestic-header>
+  <section class="housing-image"
+           [ngStyle]="{ 'background-image': 'url(' + estateProperty.pic_url + ')'}">
+    <section class="housing-banner" padding>
+      <span class="housing-title">{{estateProperty.title}}</span>
+      <span class="price">{{estateProperty.price | currency:'USD' }}</span>
+    </section>
+  </section>
+  <section class="main-content">
+    <ion-grid class="main-features">
+      <ion-row>
+        <ion-col text-center *ngFor="let feature of estateProperty.features">
+          <!-- <ion-icon [name]="feature.icon"></ion-icon> -->
+          <span class="item-block">{{feature.title}}</span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid class="listing-details">
+      <ion-row>
+        <p margin-left margin-right no-margin-top style="text-align: justify">
+          {{estateProperty.description}}
+        </p>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-icon name="home"></ion-icon>{{estateProperty.type}}
+        </ion-col>
+        <ion-col>
+          <ion-icon name="pin"></ion-icon>{{estateProperty.location}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <img class= "iconsize"src="assets/img/beds.png"/>{{estateProperty.num_bedroom}}
+        </ion-col>
+        <ion-col>
+            <img class= "iconsize"src="assets/img/toilet.png"/>{{estateProperty.num_washroom}}
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+          <ion-col>
+            <img class= "iconsize"src="assets/img/apartmentbathroom.png"/>{{estateProperty.num_shower}}
+          </ion-col>
+          <ion-col>
+              <img class= "iconsize"src="assets/img/carpark.png"/>{{estateProperty.carpark}}
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+    <h2 padding>Agent</h2>
+  </section>
+
+  <ion-fab bottom right #fab>
+      <button ion-fab><ion-icon name="arrow-dropup-circle"></ion-icon></button>
+      <ion-fab-list side="top">
+        <button ion-fab color="primary"[hidden]="login" (click)=" presentPrompt()"><ion-icon name="chatbubbles"></ion-icon></button>
+        <button ion-fab color="primary" [hidden]="login" (click)="presentcode()"><ion-icon name="cash"></ion-icon></button>
+        <button ion-fab color="primary" [hidden]="visible" (click)="Addtofav()" ><ion-icon name="add"></ion-icon></button>
+      </ion-fab-list>
+    </ion-fab>
+    
+    <ion-list>
+
+        <button ion-item>
+            <ion-avatar item-left>
+                <img src="{{agent?.pic_url}}"/>
+            </ion-avatar>
+            <h2>{{agent?.first_name}} {{agent?.last_name}}</h2>
+            <p>{{agent?.phone}}</p>
+        </button>
+
+    </ion-list>
+</ion-content>
+<ion-footer>
+
+</ion-footer>

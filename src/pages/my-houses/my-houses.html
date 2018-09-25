@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>My Houses</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div style=" position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);" [hidden]="hide">
+
+    <img src="assets/imgs/empty.png">
+    <p></p>
+
+  </div>
+    <ion-list *ngFor="let res of res" >
+        <ion-item-sliding >
+          <ion-item (click)="view(res)">
+              <ion-avatar item-left>
+                  <img src="{{res.pic_url}}"/>
+              </ion-avatar>
+            {{res.title}}
+          </ion-item>
+     
+          <ion-item-options side="right">
+            <button ion-button (click)="remove(res)">Unmark</button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+
+</ion-content>

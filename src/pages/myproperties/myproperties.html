@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>My Houses</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="colored">
+  <ion-card padding>
+      <h1 class="centered">List of Properties That Belong To Me</h1>
+          <table class="footable">
+                  <thead>
+                    <tr>
+                      <th data-class="expand"> Upload date</th>
+                      <th data-hide="phone">Image</th>
+                      <th data-hide="phone,tablet">Price</th>
+                      <th data-hide="phone,tablet">Address</th>
+                      <th data-hide="phone,tablet">Status</th>
+                      <th data-hide="phone,tablet">Agent</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let r of r">
+                      <td> {{r.created_at | date:'dd/MM/yyyy'}}</td>
+                      <td> <img src={{r.property_pic}}/></td>
+                      <td> ${{ r.price }}</td>
+                      <td>{{ r.location }}</td>
+                      <td>{{ r.property_status }}</td>
+                      <td> <ion-avatar item-left>
+                        <img class="img2" src="{{r?.agent_pic}}"/>
+                    </ion-avatar>{{ r.first_name }} {{ r.last_name }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+  </ion-card>
+</ion-content>
